@@ -1,18 +1,21 @@
-import React from 'react'
-import Header from '../../components/Header'
+import React from "react";
 
-import {
-    Container,
-} from './styles'
+import CalcPanel from "../../components/CalcPanel";
+import Header from "../../components/Header";
+import { Container } from "./styles";
 
-const Home:React.FC = () => {
-    return (
-        <Container>
-            <section>
-                <Header />
-            </section>
-        </Container>
-    )
-}
+const Home: React.FC = () => {
+  return (
+    <Container>
+      <section>
+        <Header />
+      </section>
 
-export default Home
+      <section>
+        <CalcPanel />
+      </section>
+    </Container>
+  );
+};
+
+export default Home;

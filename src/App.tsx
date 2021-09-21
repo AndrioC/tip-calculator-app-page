@@ -1,14 +1,15 @@
-import React from 'react';
-import { GlobalStyle } from './styles/global'
-import Home from './pages/Home'
+import React from "react";
 
-const App:React.FC = () => {
-    return (
-        <>
-            <GlobalStyle/>
-            <Home />
-        </>
-    )
-}
+import Home from "./pages/Home";
+import { GlobalStyle } from "./styles/global";
 
-export default App
+const App: React.FC = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <Home />
+    </>
+  );
+};
+
+export default App;

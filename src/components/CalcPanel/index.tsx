@@ -1,18 +1,32 @@
-import React from 'react'
+import React, { useState } from "react";
+import { BiDollar } from "react-icons/bi";
 
+import Input from "../Input";
+import PercentageButton from "../PercentageButton";
+import PercentageButtonCustom from "../PercentageButtonCustom";
 import {
-    Container,
-    LogoImage,
-} from './styles'
+  Container,
+  BillWrapper,
+  TitleWrapper,
+  SelectTipWrapper,
+} from "./styles";
 
-import imgLogo from '../../assets/logo.svg'
+const CalcPanel: React.FC = () => {
+  const [valueBill, setValueBill] = useState(0);
+  return (
+    <Container>
+      <BillWrapper>
+        <TitleWrapper>Bill</TitleWrapper>
+        <Input icon={BiDollar} type="number" placeholder={String(valueBill)} />
+      </BillWrapper>
 
-const Header:React.FC = () => {
-    return (
-        <Container>
-            <LogoImage src={imgLogo} alt="logo"/>
-        </Container>
-    )
-}
+      <SelectTipWrapper>
+        <TitleWrapper>Select Tip %</TitleWrapper>
+        <PercentageButton value="5" />
+        <PercentageButtonCustom value={10} />
+      </SelectTipWrapper>
+    </Container>
+  );
+};
 
-export default Header
+export default CalcPanel;
