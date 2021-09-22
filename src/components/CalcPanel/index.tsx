@@ -7,6 +7,8 @@ import PercentageButton from "../PercentageButton";
 import PercentageButtonCustom from "../PercentageButtonCustom";
 import {
   Container,
+  LeftSidePanel,
+  RightSidePanel,
   BillWrapper,
   TitleWrapper,
   TipsWrapper,
@@ -14,6 +16,10 @@ import {
   NumberPeopleWrapper,
   HeaderTitle,
   ZeroError,
+  ValueWrapper,
+  TypeValueText,
+  TypeValueAmount,
+  ResetButton,
 } from "./styles";
 
 const CalcPanel: React.FC = () => {
@@ -25,36 +31,60 @@ const CalcPanel: React.FC = () => {
   };
   return (
     <Container>
-      <BillWrapper>
-        <TitleWrapper>Bill</TitleWrapper>
-        <Input icon={BiDollar} type="number" placeholder={String(valueBill)} />
-      </BillWrapper>
+      <LeftSidePanel>
+        <BillWrapper>
+          <TitleWrapper>Bill</TitleWrapper>
+          <Input
+            icon={BiDollar}
+            type="number"
+            placeholder={String(valueBill)}
+          />
+        </BillWrapper>
 
-      <SelectTipWrapper>
-        <TitleWrapper>Select Tip %</TitleWrapper>
-        <TipsWrapper>
-          <PercentageButton value="5" />
-          <PercentageButton value="10" />
-          <PercentageButton value="15" />
-          <PercentageButton value="25" />
-          <PercentageButton value="50" />
-          <PercentageButtonCustom placeholder="Custom" />
-        </TipsWrapper>
-      </SelectTipWrapper>
+        <SelectTipWrapper>
+          <TitleWrapper>Select Tip %</TitleWrapper>
+          <TipsWrapper>
+            <PercentageButton value="5" />
+            <PercentageButton value="10" />
+            <PercentageButton value="15" />
+            <PercentageButton value="25" />
+            <PercentageButton value="50" />
+            <PercentageButtonCustom placeholder="Custom" />
+          </TipsWrapper>
+        </SelectTipWrapper>
 
-      <NumberPeopleWrapper>
-        <HeaderTitle>
-          <TitleWrapper>Number of People</TitleWrapper>
-          {numberPeople === 0 && <ZeroError>Can't be zero</ZeroError>}
-        </HeaderTitle>
-        <Input
-          icon={FaUser}
-          type="number"
-          placeholder={String(0)}
-          onChange={(e) => handleNumberOfPeople(e.target.value)}
-          value={numberPeople}
-        />
-      </NumberPeopleWrapper>
+        <NumberPeopleWrapper>
+          <HeaderTitle>
+            <TitleWrapper>Number of People</TitleWrapper>
+            {numberPeople === 0 && <ZeroError>Can't be zero</ZeroError>}
+          </HeaderTitle>
+          <Input
+            icon={FaUser}
+            type="number"
+            placeholder={String(0)}
+            onChange={(e) => handleNumberOfPeople(e.target.value)}
+            value={numberPeople}
+          />
+        </NumberPeopleWrapper>
+      </LeftSidePanel>
+
+      <RightSidePanel>
+        <ValueWrapper>
+          <TypeValueText>
+            Tip Amount <p>/ person</p>
+          </TypeValueText>
+          <TypeValueAmount>$0.00</TypeValueAmount>
+        </ValueWrapper>
+
+        <ValueWrapper>
+          <TypeValueText>
+            Total <p>/ person</p>
+          </TypeValueText>
+          <TypeValueAmount>$0.00</TypeValueAmount>
+        </ValueWrapper>
+
+        <ResetButton type="button">Reset</ResetButton>
+      </RightSidePanel>
     </Container>
   );
 };
