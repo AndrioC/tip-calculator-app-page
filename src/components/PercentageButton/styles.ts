@@ -11,6 +11,8 @@ export const Container = styled.button`
   font-size: 24px;
   color: var(--white);
   transition: background-color 0.3s;
+  margin-right: 15px;
+  margin-bottom: 15px;
 
   :hover {
     background: var(--green-50);

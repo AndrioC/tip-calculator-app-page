@@ -21,9 +21,8 @@ export const Container = styled.div<ContainerProps>`
   ${(props) =>
     props.isFocused &&
     css`
-      color: #ff9000;
       border: 2px solid;
-      border-color: #ff9000;
+      border-color: var(--green-40);
     `}
 
   input {
@@ -36,5 +35,9 @@ export const Container = styled.div<ContainerProps>`
     color: var(--green-dark);
     font-weight: bold;
     font-size: 24px;
+
+    ::placeholder {
+      color: var(--green-70);
+    }
   }
 `;

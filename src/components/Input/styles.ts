@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface ContainerProps {
   isFocused: boolean;
+  value?: number;
 }
 export const Container = styled.div<ContainerProps>`
   width: 379px;
@@ -12,6 +13,20 @@ export const Container = styled.div<ContainerProps>`
   justify-content: center;
   align-items: center;
   padding: 21px;
+
+  ${(props) =>
+    props.isFocused &&
+    css`
+      border: 2px solid;
+      border-color: var(--green-40);
+    `}
+
+  ${(props) =>
+    props.value === 0 &&
+    css`
+      border: 2px solid;
+      border-color: var(--orange);
+    `}
 
   svg {
     fill: var(--green-light);
