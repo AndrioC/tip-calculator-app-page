@@ -1,13 +1,17 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
 import { Container } from "./styles";
 
-interface Props {
-  value: string;
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  value?: string;
+};
 
-const PercentageButton: React.FC<Props> = ({ value }) => {
-  return <Container type="button">{value}%</Container>;
+const PercentageButton: React.FC<ButtonProps> = ({ value, ...rest }) => {
+  return (
+    <Container {...rest} type="button">
+      {value}%
+    </Container>
+  );
 };
 
 export default PercentageButton;

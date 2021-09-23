@@ -37,7 +37,7 @@ export const Container = styled.div<ContainerProps>`
     border: none;
     background: transparent;
     outline: none;
-    direction: rtl;
+    text-align: right;
     color: var(--green-dark);
     font-weight: bold;
     font-size: 24px;
