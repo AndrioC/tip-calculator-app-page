@@ -9,6 +9,13 @@ export const Container = styled.div`
   border-radius: 24px;
   box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
   padding: 33px;
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    width: 375px;
+    height: 789px;
+    flex-direction: column;
+  }
 `;
 
 export const BillWrapper = styled.div`
@@ -32,6 +39,15 @@ export const RightSidePanel = styled.div`
   padding: 57px 42px;
   background: var(--green-dark);
   position: relative;
+  align-items: center;
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    width: 327px;
+    height: 270px;
+
+    padding: 36px 24px;
+  }
 `;
 
 export const TitleWrapper = styled.span`
@@ -52,13 +68,23 @@ export const SelectTipWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 42px;
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    margin-top: 13px;
+  }
 `;
 
 export const NumberPeopleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 42px;
-  width: 390px;
+  width: 100%;
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    margin-top: 13px;
+  }
 `;
 
 export const HeaderTitle = styled.div`
@@ -72,13 +98,24 @@ export const ZeroError = styled.span`
   font-size: 15px;
   margin-bottom: 6px;
   margin-right: 13px;
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    margin-bottom: 3px;
+  }
 `;
 
 export const ValueWrapper = styled.div`
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 42px;
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    justify-content: space-between;
+    margin-bottom: 21px;
+  }
 `;
 export const TypeValueText = styled.span`
   color: var(--white);
@@ -89,11 +126,21 @@ export const TypeValueText = styled.span`
     color: var(--green-60);
     font-size: 13px;
   }
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    font-size: 15px;
+  }
 `;
 export const TypeValueAmount = styled.span`
   font-size: 48px;
   font-weight: bold;
   color: var(--green-40);
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    font-size: 33px;
+  }
 `;
 
 export const ResetButton = styled.button`
@@ -112,5 +159,11 @@ export const ResetButton = styled.button`
 
   :hover {
     background: var(--green-50);
+  }
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    width: 282px;
+    bottom: 36px;
   }
 `;

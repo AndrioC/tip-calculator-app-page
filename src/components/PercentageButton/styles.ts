@@ -18,4 +18,9 @@ export const Container = styled.button`
     background: var(--green-50);
     color: var(--green-dark);
   }
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    width: 147px;
+  }
 `;

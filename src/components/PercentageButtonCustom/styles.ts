@@ -40,4 +40,9 @@ export const Container = styled.div<ContainerProps>`
       color: var(--green-70);
     }
   }
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    width: 147px;
+  }
 `;

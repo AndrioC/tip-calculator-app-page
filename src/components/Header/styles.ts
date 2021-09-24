@@ -6,6 +6,11 @@ export const Container = styled.div`
   justify-content: center;
   width: 920px;
   margin-bottom: 90px;
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const LogoImage = styled.img`

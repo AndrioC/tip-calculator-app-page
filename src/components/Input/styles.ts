@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 interface ContainerProps {
   isFocused: boolean;
-  value?: number;
+  value?: string;
 }
 export const Container = styled.div<ContainerProps>`
   width: 379px;
@@ -22,7 +22,7 @@ export const Container = styled.div<ContainerProps>`
     `}
 
   ${(props) =>
-    props.value === 0 &&
+    props.value === "0" &&
     css`
       border: 2px solid;
       border-color: var(--orange);
@@ -52,5 +52,14 @@ export const Container = styled.div<ContainerProps>`
 
   input::placeholder {
     opacity: 0.35;
+  }
+
+  /* Mobile Version */
+  @media (max-width: 539px) {
+    width: 312px;
+
+    input {
+      width: 240px;
+    }
   }
 `;

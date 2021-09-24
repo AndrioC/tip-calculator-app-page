@@ -23,7 +23,7 @@ import {
 } from "./styles";
 
 const CalcPanel: React.FC = () => {
-  const [valueBill, setValueBill] = useState(0);
+  const [valueBill, setValueBill] = useState("");
   const [numberPeople, setNumberPeople] = useState(1);
   const [percentageValue, setPercentageValue] = useState(0);
 
@@ -39,7 +39,7 @@ const CalcPanel: React.FC = () => {
   };
 
   const handleResetValue = () => {
-    setValueBill(0);
+    setValueBill("0");
     setNumberPeople(1);
     setPercentageValue(0);
     setTipAmount(0);
@@ -47,8 +47,8 @@ const CalcPanel: React.FC = () => {
   };
 
   useEffect(() => {
-    const tipValue = (valueBill * (percentageValue / 100)) / numberPeople;
-    const totalValue = valueBill / numberPeople + tipValue;
+    const tipValue = (+valueBill * (percentageValue / 100)) / numberPeople;
+    const totalValue = +valueBill / numberPeople + tipValue;
     setTipAmount(tipValue);
     setTotalAmount(totalValue);
   }, [valueBill, percentageValue, numberPeople]);
@@ -61,8 +61,9 @@ const CalcPanel: React.FC = () => {
           <Input
             icon={BiDollar}
             type="number"
+            value={valueBill}
             placeholder={String(valueBill)}
-            onChange={(e) => setValueBill(+e.target.value)}
+            onChange={(e) => setValueBill(e.target.value)}
           />
         </BillWrapper>
 
@@ -122,7 +123,7 @@ const CalcPanel: React.FC = () => {
             type="number"
             placeholder={String(0)}
             onChange={(e) => handleNumberOfPeople(e.target.value)}
-            value={numberPeople}
+            value={String(numberPeople)}
           />
         </NumberPeopleWrapper>
       </LeftSidePanel>
